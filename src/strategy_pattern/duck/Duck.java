@@ -18,7 +18,7 @@ abstract public class Duck {
     }
 
     void swim() {
-        System.out.println("All ducks float");
+        System.out.println("All ducks");
     }
 
     void setFlyBehavior(FlyBehavior flyBehavior) {

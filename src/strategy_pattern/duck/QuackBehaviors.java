@@ -16,7 +16,7 @@ class Squeak implements QuackBehavior {
 
     @Override
     public void quack() {
-        System.out.println("Rubber Duck squeak");
+        System.out.println("Squeak");
     }
 }
 
