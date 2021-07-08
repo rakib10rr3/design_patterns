@@ -1,24 +1,20 @@
-package strategy_pattern.duck;
+package strategy_pattern.duck.strategy;
 
 abstract public class Duck {
+
     FlyBehavior flyBehavior;
     QuackBehavior quackBehavior;
 
-    public Duck() {
-    }
-
     public abstract void display();
 
-    public void performFly() {
-        flyBehavior.fly();
-    }
+    public void performFly() { flyBehavior.fly(); }
 
     public void performQuack() {
         quackBehavior.quack();
     }
 
     void swim() {
-        System.out.println("All ducks");
+        System.out.println("I can swim!");
     }
 
     void setFlyBehavior(FlyBehavior flyBehavior) {
@@ -28,33 +24,39 @@ abstract public class Duck {
     void setQuackBehavior(QuackBehavior quackBehavior) {
         this.quackBehavior = quackBehavior;
     }
-}
 
+    @Override
+    public String toString() {
+        display();
+        swim();
+        performFly();
+        performQuack();
+        return "";
+    }
+}
 
 class MallardDuck extends Duck {
 
-    MallardDuck() {
-        display();
-        flyBehavior = new FlyWithWings();
-        quackBehavior = new Quack();
+    MallardDuck(FlyBehavior flyBehavior, QuackBehavior quackBehavior) {
+        this.flyBehavior = flyBehavior;
+        this.quackBehavior = quackBehavior;
     }
 
     @Override
     public void display() {
-        System.out.println("Looks like a mallard");
+        System.out.println("I am Mallard duck");
     }
 }
 
 class RubberDuck extends Duck {
 
     RubberDuck(){
-        display();
         flyBehavior = new FlyNoWay();
         quackBehavior = new Squeak();
     }
 
     @Override
     public void display() {
-        System.out.println("Looks like a rubber duck");
+        System.out.println("I am Rubber duck");
     }
 }

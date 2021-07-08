@@ -1,14 +1,14 @@
-package strategy_pattern.duck;
+package strategy_pattern.duck.strategy;
 
 interface QuackBehavior {
     void quack();
 }
 
-class Quack implements QuackBehavior{
+class Quack implements QuackBehavior {
 
     @Override
     public void quack() {
-        System.out.println("Quack Quack!");
+        System.out.println("Normal Quack!");
     }
 }
 
@@ -24,6 +24,6 @@ class MuteQuack implements QuackBehavior {
 
     @Override
     public void quack() {
-        System.out.println("Can't quack");
+        System.out.println("Silent");
     }
 }

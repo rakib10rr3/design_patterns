@@ -1,10 +1,10 @@
-package strategy_pattern.duck;
+package strategy_pattern.duck.strategy;
 
 interface FlyBehavior {
     void fly();
 }
 
-class FlyWithWings implements FlyBehavior{
+class FlyWithWings implements FlyBehavior {
 
     @Override
     public void fly() {
@@ -19,3 +19,5 @@ class FlyNoWay implements FlyBehavior {
         System.out.println("Can not fly");
     }
 }
+
+//TODO Fly with rockets
